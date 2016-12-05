@@ -1,0 +1,22 @@
+INSERT INTO roles (id,role)     VALUES (1, 'ADMIN');
+INSERT INTO roles (id,role)    VALUES (2, 'USER');
+
+INSERT INTO `keldo`.`identities` (`id`, `first_name`, `last_name`, `email`, `created`, `modified`) VALUES ('i11111111111111111111111111111111111', 'Bob', 'SU', 'bob@super.com', NOW(), NOW());
+INSERT INTO `keldo`.`identities` (`id`, `first_name`, `last_name`, `email`, `created`, `modified`) VALUES ('i11111111111111111111111111111111112', 'Rob', 'Test', 'rob@test.com', NOW(), NOW());
+
+INSERT INTO `keldo`.`users` (`id`, `username`, `password`, `role_id`, `identity_id`, `created`, `modified`) VALUES ('u11111111111111111111111111111111111', 'bsu1', 'bsu1', 0, 'i11111111111111111111111111111111111', NOW(), NOW());
+INSERT INTO `keldo`.`users` (`id`, `username`, `password`, `role_id`, `identity_id`, `created`, `modified`) VALUES ('u11111111111111111111111111111111112', 'rtest1', 'rtest1', 1, 'i11111111111111111111111111111111112', NOW(), NOW());
+
+INSERT INTO `keldo`.`dispositions` (`id`, `dispositionstatus`) VALUES (0, 'Soft-Deleted');
+INSERT INTO `keldo`.`dispositions` (`id`, `dispositionstatus`) VALUES (1, 'Active');
+INSERT INTO `keldo`.`dispositions` (`id`, `dispositionstatus`) VALUES (2, 'Complete');
+
+INSERT INTO `keldo`.`families` (`id`, `name`, `disposition_id`, `note`) VALUES ('f11111111111111111111111111111111111', 'LawnCare', 1, 'Lawn Care problems are Here');
+INSERT INTO `keldo`.`families` (`id`, `name`, `disposition_id`, `note`) VALUES ('f11111111111111111111111111111111112', 'HomeRepair', 1, 'Home Repair Holmes for homes');
+
+INSERT INTO `keldo`.`problems` (`id`, `detail`, `note`, `disposition_id`, `user_id`, `family_id`, `modified`, `created`) VALUES ('p11111111111111111111111111111111111', 'Lawn has brown spots', 'I wish I could have a nice golf course lawn', 1, 'u11111111111111111111111111111111112', 'f11111111111111111111111111111111111', 
+NOW(), NOW());
+INSERT INTO `keldo`.`problems` (`id`, `detail`, `note`, `disposition_id`, `user_id`, `family_id`, `modified`, `created`) VALUES ('p11111111111111111111111111111111112', 'Roof Leaks', 'My house has a leaky roof and it is bad', 1, 'u11111111111111111111111111111111112', 'f11111111111111111111111111111111112', 
+NOW(), NOW());
+
+
